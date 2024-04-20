@@ -67,7 +67,7 @@ variable: let vault <- create Vault(balance: self.totalSupply)
 To analyze multiple Cadence files, use the `find` command. (You can add Path variable to output file name}:
 
 ```bash
-find . -type f -name "*.cdc" -exec cdcq {} ".Variable | variable: {Path} {Variable}" \;
+find . -type f -name "*.cdc" -exec cdcq {} ".Variable | {Path} variable: {Variable}" \;
 ```
 
 ## Query Syntax
