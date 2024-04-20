@@ -10,7 +10,7 @@ cdcq <filename> <query>
 
 ### Examples
 
-* List all functions in contract:
+*List all functions in contract:*
 
 ```bash
 ➜  cdcq git:(main) ✗ ./cdcq ExampleToken.cdc ".Function | Access: {Function.Access} name: {Function.Identifier}"
@@ -26,7 +26,7 @@ Access: AccessPublic name: createEmptyVault
 Access: AccessPublic name: mintTokens
 ```
 
-* **List all composites with CompositeKind Resource:**
+*List all composites with CompositeKind Resource:*
 
    ```bash
    cdcq ExampleToken.cdc ".Composite[CompositeKind=~Resource] | {Composite.Identifier}"
@@ -38,7 +38,7 @@ Output:
  VaultMinter
 ```
 
-* **List resources and their conformances:**
+*List resources and their conformances:*
 
    ```bash
    cdcq ExampleToken.cdc ".Composite[CompositeKind=~Resource] | {Composite.Identifier} {Composite.Conformances}" 
@@ -50,7 +50,7 @@ Output:
  VaultMinter []
 ```
 
-* **List variable declarations:**
+*List variable declarations:*
 
    ```bash
    cdcq ExampleToken.cdc ".Variable | variable: {Variable}"     
