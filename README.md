@@ -13,7 +13,7 @@ cdcq <filename> <query>
 *List all functions in contract:*
 
 ```bash
-➜  cdcq git:(main) ✗ ./cdcq ExampleToken.cdc ".Function | Access: {Function.Access} name: {Function.Identifier}"
+./cdcq ExampleToken.cdc ".Function | Access: {Function.Access} name: {Function.Identifier}"
 ```
 
 Output:
@@ -28,9 +28,9 @@ Access: AccessPublic name: mintTokens
 
 *List all composites with CompositeKind Resource:*
 
-   ```bash
-   cdcq ExampleToken.cdc ".Composite[CompositeKind=~Resource] | {Composite.Identifier}"
-   ```
+```bash
+cdcq ExampleToken.cdc ".Composite[CompositeKind=~Resource] | {Composite.Identifier}"
+```
   
 Output:
 ```cadence
@@ -40,9 +40,9 @@ Output:
 
 *List resources and their conformances:*
 
-   ```bash
-   cdcq ExampleToken.cdc ".Composite[CompositeKind=~Resource] | {Composite.Identifier} {Composite.Conformances}" 
-  ```
+```bash
+cdcq ExampleToken.cdc ".Composite[CompositeKind=~Resource] | {Composite.Identifier} {Composite.Conformances}" 
+```
 
 Output:
 ```cadence
@@ -52,9 +52,10 @@ Output:
 
 *List variable declarations:*
 
-   ```bash
-   cdcq ExampleToken.cdc ".Variable | variable: {Variable}"     
-   ```
+```bash
+cdcq ExampleToken.cdc ".Variable | variable: {Variable}"     
+```
+
 Output:
 ```cadence
 variable: let recipientRef = recipient.borrow() ?? panic("Could not borrow a receiver reference to the vault")
@@ -63,10 +64,10 @@ variable: let vault <- create Vault(balance: self.totalSupply)
 
 ## Running on Multiple Files
 
-To analyze multiple Cadence files, use the `find` command:
+To analyze multiple Cadence files, use the `find` command. (You can add Path variable to output file name}:
 
 ```bash
-find . -type f -name "*.cdc" -exec cdcq {} ".Variable | variable: {Variable}" \;
+find . -type f -name "*.cdc" -exec cdcq {} ".Variable | variable: {Path} {Variable}" \;
 ```
 
 ## Query Syntax
