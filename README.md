@@ -8,6 +8,7 @@ cdcq is a powerful command-line tool that allows you to query and analyze the Ab
 cdcq <filename> <query>
 ```
 
+
 ### Examples
 
 *List all functions in contract:*
@@ -61,6 +62,20 @@ Output:
 variable: let recipientRef = recipient.borrow() ?? panic("Could not borrow a receiver reference to the vault")
 variable: let vault <- create Vault(balance: self.totalSupply)
 ```
+
+## Note:
+
+Documentation is a bit lacking currently, let error messages guides you :)
+
+```bash
+./cdcq ExampleToken.cdc ".c | "
+```
+Output:
+```
+Invalid element type `c`.
+Available types: Array, Assignment, Attach, Attachment, Binary, Block, Bool, Break, Casting, Composite, Conditional, Continue, Create, Declaration, Destroy, Dictionary, Emit, EnumCase, Expression, Field, FixedPoint, For, Force, Function, FunctionBlock, FunctionExpression, Identifier, If, Import, Index, Integer, Interface, Invocation, Member, Nil, Path, Pragma, Program, Reference, Remove, Return, SpecialFunction, Statement, String, Swap, Switch, Transaction, Unary, Variable, Void, While
+```
+
 
 ## Running on Multiple Files
 
