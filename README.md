@@ -34,7 +34,7 @@ cdcq <filename> <query>
    cdcq ExampleToken.cdc ".Variable | variable: {Variable}"     
    ```
 
-**## Running on Multiple Files**
+## Running on Multiple Files
 
 To analyze multiple Cadence files, use the `find` command:
 
@@ -42,11 +42,11 @@ To analyze multiple Cadence files, use the `find` command:
 find . -type f -name "*.cdc" -exec cdcq {} ".Variable | variable: {Variable}" \;
 ```
 
-**## Query Syntax**
+## Query Syntax
 
 A cdcq query consists of a filter and a display section, separated by a pipe (`|`).
 
-**### Filter**
+### Filter
 
 * **Select:** Start with a period (`.`) followed by the AST element type (e.g., `.Function`, `.Composite`).
 * **Choose:** Filter further using key-value pairs enclosed in square brackets (`[]`).
