@@ -12,9 +12,15 @@ cdcq <filename> <query>
 
 * **List all functions in contract:**
 
-   ```bash
-   cdcq ExampleToken.cdc ".Function | Access: {Function.Access} name: {Function.Identifier}"
-   ```
+```bash
+➜  cdcq git:(main) ✗ ./cdcq ExampleToken.cdc ".Function | Access: {Function.Access} name: {Function.Identifier}"
+Access: AccessPublic name: withdraw
+Access: AccessPublic name: deposit
+Access: AccessPublic name: withdraw
+Access: AccessPublic name: deposit
+Access: AccessPublic name: createEmptyVault
+Access: AccessPublic name: mintTokens
+```
 
 * **List all composites with CompositeKind Resource:**
 
