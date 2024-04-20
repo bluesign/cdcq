@@ -10,10 +10,14 @@ cdcq <filename> <query>
 
 ### Examples
 
-* **List all functions in contract:**
+* List all functions in contract:
 
 ```bash
 ➜  cdcq git:(main) ✗ ./cdcq ExampleToken.cdc ".Function | Access: {Function.Access} name: {Function.Identifier}"
+```
+
+Output:
+```
 Access: AccessPublic name: withdraw
 Access: AccessPublic name: deposit
 Access: AccessPublic name: withdraw
@@ -27,6 +31,12 @@ Access: AccessPublic name: mintTokens
    ```bash
    cdcq ExampleToken.cdc ".Composite[CompositeKind=~Resource] | {Composite.Identifier}"
    ```
+  
+Output:
+```cadence
+ Vault
+ VaultMinter
+```
 
 * **List resources and their conformances:**
 
@@ -34,11 +44,22 @@ Access: AccessPublic name: mintTokens
    cdcq ExampleToken.cdc ".Composite[CompositeKind=~Resource] | {Composite.Identifier} {Composite.Conformances}" 
   ```
 
+Output:
+```cadence
+ Vault [Provider Receiver Balance]
+ VaultMinter []
+```
+
 * **List variable declarations:**
 
    ```bash
    cdcq ExampleToken.cdc ".Variable | variable: {Variable}"     
    ```
+Output:
+```cadence
+variable: let recipientRef = recipient.borrow() ?? panic("Could not borrow a receiver reference to the vault")
+variable: let vault <- create Vault(balance: self.totalSupply)
+```
 
 ## Running on Multiple Files
 
