@@ -1,16 +1,16 @@
 Absolutely! Here's an expanded and revised README for your Cadence command-line AST query tool. I've focused on making it more in line with open-source project standards, providing additional clarity, and better organization.
 
-**# cdcq - A Cadence AST Query Tool**
+# cdcq - A Cadence AST Query Tool
 
 cdcq is a powerful command-line tool that allows you to query and analyze the Abstract Syntax Tree (AST) of your Cadence smart contracts. This enables you to gain deep insights into the structure and elements of your Cadence code.
 
-**## Usage**
+## Usage
 
 ```bash
 cdcq <filename> <query>
 ```
 
-**### Examples**
+### Examples
 
 * **List all functions in contract:**
 
@@ -56,16 +56,11 @@ A cdcq query consists of a filter and a display section, separated by a pipe (`|
     * **Value:** The desired value to match. Prefix with `~` for "contains" matching.
     * **Supported Operations:** `=` (exact match), `!=` (not equal).
 
-**### Display**
+### Display
 
 * A format string where variables are the AST element names from your filter, enclosed in curly braces (`{}`).
 
-**## Contributing**
+## Contributing
 
 cdcq is an open-source project. We welcome contributions, issues, and feature requests. To get started, please refer to our contribution guidelines at [link to guidelines, if applicable].
 
-**## License**
-
-cdcq is licensed under the Apache License 2.0: [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0) (or other appropriate open-source license).
-
-**Let me know if you'd like further refinement or additional sections added to your README!** 
