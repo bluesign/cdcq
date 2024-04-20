@@ -1,6 +1,6 @@
 # cdcq - A Cadence AST Query Tool
 
-cdcq is a powerful command-line tool that allows you to query and analyze the Abstract Syntax Tree (AST) of your Cadence smart contracts. This enables you to gain deep insights into the structure and elements of your Cadence code.
+cdcq is a powerful command-line tool that allows you to query and analyze the Abstract Syntax Tree (AST) of your Cadence smart contracts. 
 
 ## Usage
 
