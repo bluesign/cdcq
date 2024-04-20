@@ -159,10 +159,13 @@ func main() {
 	queryParts := strings.Split(os.Args[2], "|")
 
 	if len(queryParts) != 2 {
-		panic("Query should be in the format of: `<search> | <display>` )")
+		panic("Query should be in the format of: `<search> | <display>`")
 	}
 
 	query := queryParts[0]
+	if !strings.Contains(query, ".") {
+		panic("you need to have at least one selector. Example: .Function")
+	}
 	display := queryParts[1]
 
 	code, _ := os.ReadFile(filePath)
@@ -313,7 +316,10 @@ func main() {
 		for _, v := range variables {
 			parts := strings.Split(v, ".")
 			object := parts[0]
-			field := parts[1]
+			field := ""
+			if len(parts) > 1 {
+				field = parts[1]
+			}
 
 			isOptional := false
 			if strings.HasSuffix(object, "?") {
